@@ -23,8 +23,8 @@
   @screenBG: @appBGsolid;
   @cardBG: #fff;
   @modalBG: #fafafa;
-  @tint: #6C3F93;
-  @tintAlt: #2E3192;
+  @tint: #60B7D7;
+  @tintAlt: #FE533A;
   @successColor: #7ED321;
   @errorColor: #D0021B;
   @actionsheetBG: rgba(0,0,0,0.87);
@@ -43,55 +43,50 @@
     opacity: 0.37;
   }
   .flexContainer {
-    display: -ms-flexbox !important;
     display: -webkit-flex !important;
     display: flex !important;
     -webkit-flex-wrap: nowrap !important;
-    -ms-flex-wrap: nowrap !important;
     flex-wrap: nowrap !important;
     -webkit-flex-direction: column !important;
-    -ms-flex-direction: column !important;
     flex-direction: column !important;
     -webkit-justify-content: center !important;
-    -ms-flex-pack: center !important;
     justify-content: center !important;
     -webkit-align-content: stretch !important;
-    -ms-flex-line-pack: stretch !important;
     align-content: stretch !important;
     -webkit-align-items: center !important;
-    -ms-flex-align: center !important;
     align-items: center !important;
-    &.flexContainerRow {
-      -webkit-flex-direction: row !important;
-      -ms-flex-direction: row !important;
-      flex-direction: row !important;
-    }
-    &.flexContainerColumn {
-      -webkit-flex-direction: column !important;
-      -ms-flex-direction: column !important;
-      flex-direction: column !important;
-    }
-    &.flexContainerSpaceAround {
-      -webkit-justify-content: space-around !important;
-      -ms-flex-pack: distribute !important;
-      justify-content: space-around !important;
-    }
-    .flexItem {
-      -webkit-order: 0 !important;
-      -ms-flex-order: 0 !important;
-      order: 0 !important;
-      -webkit-flex: 0 0 auto !important;
-      -ms-flex: 0 0 auto !important;
-      flex: 0 0 auto !important;
-      -webkit-align-self: auto !important;
-      -ms-flex-item-align: auto !important;
-      align-self: auto !important;
-      &.flexItemElastic {
-        -webkit-flex: 1 1 auto !important;
-        -ms-flex: 1 1 auto !important;
-        flex: 1 1 auto !important;
-      }
-    }
+  }
+  .flexContainerRow {
+    -webkit-flex-direction: row !important;
+    flex-direction: row !important;
+  }
+  .flexContainerColumn {
+    -webkit-flex-direction: column !important;
+    flex-direction: column !important;
+  }
+  .flexContainerSpaceAround {
+    -webkit-justify-content: space-around !important;
+    justify-content: space-around !important;
+  }
+  .flexContainerSpaceBetween {
+    -webkit-justify-content: space-between !important;
+    justify-content: space-between !important;
+  }
+  .flexItem {
+    -webkit-order: 0 !important;
+    order: 0 !important;
+    -webkit-flex: 0 0 auto !important;
+    flex: 0 0 auto !important;
+    -webkit-align-self: auto !important;
+    align-self: auto !important;
+  }
+  .flexItemElastic {
+    -webkit-order: 0 !important;
+    order: 0 !important;
+    -webkit-flex: 1 1 auto !important;
+    flex: 1 1 auto !important;
+    -webkit-align-self: auto !important;
+    align-self: auto !important;
   }
 
 // ANIMATION CLASSES ========================
@@ -215,7 +210,7 @@
 
 
 
-// DEFINITIONS
+// CORE RESETS
 
   * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
@@ -249,6 +244,10 @@
     margin:0px; padding:0px;
     color: @mainColor;
     background-color: @appBGsolid;
+  }
+
+  img {
+    vertical-align: middle;
   }
 
   app {
@@ -723,7 +722,6 @@
     -webkit-transform:  translate(-100%,-100%);
   }
 
-
 // FORM ELEMENTS
 
   form {
@@ -912,6 +910,56 @@
   }
 
 // SCREEN-SPECIFIC
+
+  screen#calculate {
+    numberpad {
+      position: absolute;
+      bottom:0;
+      border-top: 0.1rem solid darken(@appBGsolid,5%);
+      .flexContainer();
+      row {
+        .flexItemElastic();
+        .flexContainer();
+        .flexContainerRow();
+      }
+      column {
+        .flexItemElastic();
+        .flexContainer();
+        .flexContainerColumn();
+      }
+      key {
+        .flexItem();
+        .flexContainer();
+        .animate();
+        width: 25vw;
+        max-width: 15rem;
+        height: 25vw;
+        max-height: 15rem;
+        font-size: 2.1rem;
+        background-color: @appBGsolid;
+        //border-radius: 25vw;
+        face {
+          .flexItem();
+        }
+        &.touched {
+          opacity: 1 !important;
+          background-color: lighten(@tint,35%);
+        }
+        &.touched.destroy {
+          opacity: 1 !important;
+          background-color: lighten(@tintAlt,35%);
+        }
+        &.tall {
+          height: 50vw;
+          max-height: 30rem;
+        }
+        &.wide {
+          width: 50vw;
+          max-width: 30rem;
+        }
+      }
+    }
+  }
 
   screen#start {
     nav {

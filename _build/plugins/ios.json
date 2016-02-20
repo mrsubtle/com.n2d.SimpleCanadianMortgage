@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        }
+    },
+    "dependent_plugins": {}
+}

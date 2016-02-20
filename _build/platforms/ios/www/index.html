@@ -4,17 +4,119 @@
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <!-- removed ", target-densitydpi=device-dpi" -->
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>SimpleCalc</title>
   </head>
   <body>
-    <app class="flexContainer">
-      <p class="flexItem">
-        Bonjour!
-      </p>
+    <app>
+      <screen id="login" class="hidden">
+        <form id="login">
+          <div>
+            <input type="email" id="t_email" placeholder="you@server.net">
+          </div>
+          <div>
+            <input type="password" id="t_password" placeholder="password">
+          </div>
+          <div>
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </screen>
+      <screen id="signup" class="hidden">
+        <form id="signup">
+          <div>
+            <input type="text" id="t_name" placeholder="Richard B.">
+          </div>
+          <div>
+            <input type="email" id="t_email" placeholder="rich@blackagency.co">
+          </div>
+          <div>
+            <input type="text" id="t_password" placeholder="password">
+          </div>
+          <div>
+            <input type="text" id="t_password_confirm" placeholder="confirm password">
+          </div>
+          <div>
+            <button type="submit">Signup</button>
+          </div>
+        </form>
+      </screen>
+      <screen id="calculate" class="hidden">
+        <numberpad>
+          <row>
+            <key data-value="7" class="touchable" style="touch-action: none;">
+              <face>7</face>
+            </key>
+            <key data-value="8" class="touchable" style="touch-action: none;">
+              <face>8</face>
+            </key>
+            <key data-value="9" class="touchable" style="touch-action: none;">
+              <face>9</face>
+            </key>
+            <key data-value="clear" class="touchable destroy" style="touch-action: none;">
+              <face>
+                <img src="img/btn-clear.svg" alt="Clear Entry" width="27" height="27">
+              </face>
+            </key>
+          </row>
+          <row>
+            <key data-value="4" class="touchable" style="touch-action: none;">
+              <face>4</face>
+            </key>
+            <key data-value="5" class="touchable" style="touch-action: none;">
+              <face>5</face>
+            </key>
+            <key data-value="6" class="touchable" style="touch-action: none;">
+              <face>6</face>
+            </key>
+            <key data-value="delete" class="touchable destroy" style="touch-action: none;">
+              <face>
+                <img src="img/btn-delete.svg" alt="Delete character" width="27" height="27">
+              </face>
+            </key>
+          </row>
+          <row>
+            <column>
+              <row>
+                <key data-value="1" class="touchable" style="touch-action: none;">
+                  <face>1</face>
+                </key>
+                <key data-value="2" class="touchable" style="touch-action: none;">
+                  <face>2</face>
+                </key>
+                <key data-value="3" class="touchable" style="touch-action: none;">
+                  <face>3</face>
+                </key>
+              </row>
+              <row class="flexItemElastic">
+                <key data-value="0" class="touchable wide" style="touch-action: none;">
+                  <face>0</face>
+                </key>
+                <key data-value="decimal" class="touchable" style="touch-action: none;">
+                  <face>.</face>
+                </key>
+              </row>
+            </column>
+            <key data-value="confirm" class="touchable tall" style="touch-action: none;">
+              <face>
+                <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
+              </face>
+            </key>
+          </row>
+        </numberpad>
+      </screen>
     </app>
     <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/lib/underscore-min.js"></script>
+    <script src="js/lib/backbone-min.js"></script>
+    <script src="js/lib/jquery-2.2.0.min.js"></script>
+    <script src="js/lib/hammer.min.js"></script>
+    <script src="js/lib/hammer-time.js"></script>
+    <script src="js/lib/jquery.hammer.js"></script>
+    <script src="js/lib/parse-1.6.14.min.js"></script>
+    <script src="js/lib/moment-with-locales.min.js"></script>
     <script type="text/javascript" src="js/core.min.js"></script>
     <script type="text/javascript">
       app.initialize();

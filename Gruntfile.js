@@ -47,8 +47,10 @@ module.exports = function(grunt) {
     			{ expand: true, cwd: '_working/www/', src: ['*.html'], dest: '_build/www/'},
     			//copy images
     			{ expand: true, cwd: '_working/www/img/', src: ['**'], dest: '_build/www/img/'},
-    			//copy js/lib
-    			{ expand: true, cwd: '_working/www/js/lib/', src: ['**'], dest: '_build/www/js/lib/'},
+          //copy js/inc
+          { expand: true, cwd: '_working/www/js/inc/', src: ['**'], dest: '_build/www/js/inc/'},
+          //copy js/lib
+          { expand: true, cwd: '_working/www/js/lib/', src: ['**'], dest: '_build/www/js/lib/'},
     			//copy fonts
     			{ expand: true, cwd: '_working/www/fonts/', src: ['**'], dest: '_build/www/fonts/'}
     		]

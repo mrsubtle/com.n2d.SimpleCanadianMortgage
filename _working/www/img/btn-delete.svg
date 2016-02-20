@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>btn-delete</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="btn-delete" sketch:type="MSArtboardGroup" stroke="#FFFFFF" fill="#FE533A">
+            <path d="M17.934,18.4315994 C18.35,18.4315994 18.558,18.0212651 18.35,17.665642 L13.072,9.70515564 C12.994,9.56837752 12.838,9.43159941 12.63,9.43159941 L12.5,9.43159941 C12.292,9.43159941 12.136,9.56837752 12.058,9.70515564 L6.65,17.665642 C6.442,18.0212651 6.65,18.4315994 7.066,18.4315994 L17.934,18.4315994 Z" id="Path" sketch:type="MSShapeGroup" transform="translate(12.500000, 13.931599) rotate(-90.000000) translate(-12.500000, -13.931599) "></path>
+        </g>
+    </g>
+</svg>

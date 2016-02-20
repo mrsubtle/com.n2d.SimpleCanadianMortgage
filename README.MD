@@ -1,5 +1,5 @@
-# AR FLYER
-==========
+# SimpleCalc
+============
 Repo for com.n2d.SimpleCanadianMortgage
 
 ## Current Plugins
@@ -11,4 +11,5 @@ Repo for com.n2d.SimpleCanadianMortgage
 - cordova-plugin-geolocation
 - cordova-plugin-network-information
 - cordova-plugin-vibration
+- cordova-plugin-globalization
 
