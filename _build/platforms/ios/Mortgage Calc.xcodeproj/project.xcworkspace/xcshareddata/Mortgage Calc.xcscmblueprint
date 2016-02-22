@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9997D814A6651D9190AAD13F3B02C4C4B1BA24D0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9997D814A6651D9190AAD13F3B02C4C4B1BA24D0" : 0,
+    "36840EBA302F74A9981AD4617C14378F8FD6C370" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B3D6BB62-401E-407A-A9EF-7FD6B8DD0640",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9997D814A6651D9190AAD13F3B02C4C4B1BA24D0" : "com.n2d.SimpleCanadianMortgage\/",
+    "36840EBA302F74A9981AD4617C14378F8FD6C370" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Mortgage Calc",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "_build\/platforms\/ios\/Mortgage Calc.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/richard-bennett-cti\/Royale.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "36840EBA302F74A9981AD4617C14378F8FD6C370"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/mrsubtle\/com.n2d.SimpleCanadianMortgage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9997D814A6651D9190AAD13F3B02C4C4B1BA24D0"
+    }
+  ]
+}
