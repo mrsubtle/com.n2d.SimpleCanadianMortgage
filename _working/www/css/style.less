@@ -14,6 +14,7 @@
   @uiBodySize: 1.7rem;
 
   @touchBase: 60px;
+  @maxKeySize: 11rem;
   @statusBarHeight: 0px;
   @navHeight: (@touchBase + @statusBarHeight);
 
@@ -71,6 +72,14 @@
   .flexContainerSpaceBetween {
     -webkit-justify-content: space-between !important;
     justify-content: space-between !important;
+  }
+  .flexContainerAlignStart {
+    -webkit-align-items: flex-start !important;
+    align-items: flex-start !important;
+  }
+  .flexContainerAlignEnd {
+    -webkit-align-items: flex-end !important;
+    align-items: flex-end !important;
   }
   .flexItem {
     -webkit-order: 0 !important;
@@ -912,50 +921,137 @@
 // SCREEN-SPECIFIC
 
   screen#calculate {
-    numberpad {
-      position: absolute;
-      bottom:0;
-      border-top: 0.1rem solid darken(@appBGsolid,5%);
-      .flexContainer();
-      row {
-        .flexItemElastic();
-        .flexContainer();
-        .flexContainerRow();
+    color: lighten(@mainColor, 30%);
+    mortgage-calculation {
+      summary {
+        font-size: 2.3rem;
+        padding: 1rem 2rem;
+        principal, amortization, rate, frequency, calculated {
+          .animate();
+          display: inline-block;
+          position: relative;
+          font-size: 2.5rem;
+          color: @tintAlt;
+          &::after {
+            .animate();
+            position: absolute;
+            display: block;
+            top: 0rem;
+            left: -0.2rem;
+            bottom: 0.2rem;
+            right: -0.2rem;
+            border-radius: 0.3rem;
+            content: '';
+            opacity: 0;
+            background-color: @appBGsolid;
+          }
+          &.selected {
+            &::after {
+              opacity: 0.11;
+              background-color: @tintAlt;
+            }
+          }
+        }
+        calculated {
+          font-family: "AvenirNext-DemiBold";
+          color: @tint;
+        }
       }
-      column {
-        .flexItemElastic();
+      down-payment {
+        display: inline-block;
+        width: 100%;
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
         .flexContainer();
-        .flexContainerColumn();
+        row {
+          .flexItemElastic();
+          .flexContainer();
+          .flexContainerRow();
+          .flexContainerAlignStart();
+          img {
+            .flexItem();
+          }
+          text {
+            .flexItem();
+            .flexItemElastic();
+          }
+        }
       }
-      key {
-        .flexItem();
-        .flexContainer();
+    }
+    helper {
+      .animate();
+      height: 25vw;
+      max-height: @maxKeySize;
+      font-size: 1.3rem;
+      overflow: hidden;
+      &.hide {
+        height: 0vw;
+      }
+    }
+    user-input {
+      max-height: (@maxKeySize * 4);
+      box-shadow: 0px 0px 0px 1px rgba(0,0,0,0.07);
+      numberpad {
         .animate();
-        width: 25vw;
-        max-width: 15rem;
-        height: 25vw;
-        max-height: 15rem;
-        font-size: 2.1rem;
-        background-color: @appBGsolid;
-        //border-radius: 25vw;
-        face {
+        height: 100vw;
+        max-height: (@maxKeySize * 4);
+        max-width: (@maxKeySize * 4);
+        overflow: hidden;
+        &.hide {
+          height: 0vw;
+        }
+        //border-top: 0.1rem solid darken(@appBGsolid,5%);
+        .flexContainer();
+        row {
+          .flexItemElastic();
+          .flexContainer();
+          .flexContainerRow();
+        }
+        column {
+          .flexItemElastic();
+          .flexContainer();
+          .flexContainerColumn();
+        }
+        key {
           .flexItem();
+          .flexContainer();
+          .animate(175ms);
+          width: 25vw;
+          max-width: @maxKeySize;
+          height: 25vw;
+          max-height: @maxKeySize;
+          font-size: 2.1rem;
+          background-color: @appBGsolid;
+          //border-radius: 25vw;
+          face {
+            .flexItem();
+          }
+          &.touched {
+            opacity: 1 !important;
+            background-color: lighten(@tint,35%);
+          }
+          &.touched.destroy {
+            opacity: 1 !important;
+            background-color: lighten(@tintAlt,35%);
+          }
+          &.tall {
+            height: 50vw;
+            max-height: (@maxKeySize * 2);
+          }
+          &.wide {
+            width: 50vw;
+            max-width: (@maxKeySize * 2);
+          }
         }
-        &.touched {
-          opacity: 1 !important;
-          background-color: lighten(@tint,35%);
-        }
-        &.touched.destroy {
-          opacity: 1 !important;
-          background-color: lighten(@tintAlt,35%);
-        }
-        &.tall {
-          height: 50vw;
-          max-height: 30rem;
-        }
-        &.wide {
-          width: 50vw;
-          max-width: 30rem;
+      }
+      frequency-selector {
+        .animate();
+        height: 100vw;
+        max-height: (@maxKeySize * 4);
+        max-width: (@maxKeySize * 4);
+        overflow: hidden;
+        &.hide {
+          height: 0vw;
         }
       }
     }

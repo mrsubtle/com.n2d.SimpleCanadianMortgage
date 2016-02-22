@@ -54,7 +54,8 @@ var app = {
     console.log('Device ready, yo');
     if (meta.isOnline) Parse.initialize(config.parse.ApplicationID, config.parse.JavascriptKey);
     app.setLocale();
-    v.initialize();
+    $('screen#calculate helper').removeClass('hide');
+    views.initialize();
     touch.initialize();
   },
   onDeviceOnline: function() { 'use strict';
