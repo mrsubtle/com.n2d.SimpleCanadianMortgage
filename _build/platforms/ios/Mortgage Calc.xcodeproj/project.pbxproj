@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		13D0297E78E54FC29FCD8EC7 /* CDVGlobalization.m in Sources */ = {isa = PBXBuildFile; fileRef = 58063A401E0042A09F845015 /* CDVGlobalization.m */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -55,6 +54,9 @@
 		DD6FC37EE0864EAFB4FAC14F /* CDVConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 66C71B009B7E47CAB925A986 /* CDVConnection.m */; };
 		E0D03504CB5C44C98307A1EF /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4878E96BE27A4966BCD4964A /* CoreTelephony.framework */; };
 		E8D7A1F0C582456B8700E8B0 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 23DDE9F494B548769A7A580C /* CDVNotification.m */; };
+		C6B6047CBF4B46FC867CE637 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = 42F15C45F86B436CA4144B66 /* SocialSharing.m */; };
+		7B238A33692C45F5A2D5667E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F5EDE01FB91488982BB4038 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		010FCC59F9264A3080C0353A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA3993BFD284421DAFC4BABD /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +142,10 @@
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "Mortgage Calc/config.xml"; sourceTree = "<group>"; };
 		FB7B4A2FC7034DAE98316842 /* CDVNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDVNotification.h; path = "cordova-plugin-dialogs/CDVNotification.h"; sourceTree = "<group>"; };
+		42F15C45F86B436CA4144B66 /* SocialSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		5DB780BA01604EB1984C8AC6 /* SocialSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		5F5EDE01FB91488982BB4038 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		AA3993BFD284421DAFC4BABD /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +161,8 @@
 				43E56DA9CEFC4BA6A26B6074 /* CoreLocation.framework in Frameworks */,
 				CEA1E2F5601D424FB147650B /* SystemConfiguration.framework in Frameworks */,
 				E0D03504CB5C44C98307A1EF /* CoreTelephony.framework in Frameworks */,
+				7B238A33692C45F5A2D5667E /* Social.framework in Frameworks */,
+				010FCC59F9264A3080C0353A /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +243,8 @@
 				4F97647DBA9E451EA680BDF6 /* CoreLocation.framework */,
 				C54CD6D3C809472792B110D9 /* SystemConfiguration.framework */,
 				4878E96BE27A4966BCD4964A /* CoreTelephony.framework */,
+				5F5EDE01FB91488982BB4038 /* Social.framework */,
+				AA3993BFD284421DAFC4BABD /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +274,8 @@
 				CFDCF251EB4343B69BFD6181 /* CDVReachability.h */,
 				58063A401E0042A09F845015 /* CDVGlobalization.m */,
 				0C4C091B6FAF45518B2499AA /* CDVGlobalization.h */,
+				42F15C45F86B436CA4144B66 /* SocialSharing.m */,
+				5DB780BA01604EB1984C8AC6 /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = "Mortgage Calc/Plugins";
@@ -464,6 +476,7 @@
 				DD6FC37EE0864EAFB4FAC14F /* CDVConnection.m in Sources */,
 				2D0C415A04344783BDC2DB3B /* CDVReachability.m in Sources */,
 				13D0297E78E54FC29FCD8EC7 /* CDVGlobalization.m in Sources */,
+				C6B6047CBF4B46FC867CE637 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

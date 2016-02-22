@@ -33,16 +33,6 @@
   @timingFunction: cubic-bezier(.18,.98,.56,1);
 
 // CORE CLASSES
-  .hidden {
-    display: none !important;
-  }
-  .touchable {
-    -webkit-transition: all 300ms @timingFunction;
-    opacity: 1;
-  }
-  .touched, .disabled {
-    opacity: 0.37;
-  }
   .flexContainer {
     display: -webkit-flex !important;
     display: flex !important;
@@ -96,6 +86,16 @@
     flex: 1 1 auto !important;
     -webkit-align-self: auto !important;
     align-self: auto !important;
+  }
+  .hidden {
+    display: none !important;
+  }
+  .touchable {
+    -webkit-transition: all 300ms @timingFunction;
+    opacity: 1;
+  }
+  .touched, .disabled {
+    opacity: 0.37;
   }
 
 // ANIMATION CLASSES ========================
@@ -289,8 +289,8 @@
     width: 100%; height: @navHeight;
     padding-top: @statusBarHeight;
     line-height: @touchBase;
-    background-color: rgba(red(@appBGsolid),green(@appBGsolid),blue(@appBGsolid),0.94);
-    border-bottom: 1px solid darken(@appBGsolid,5%);
+    //background-color: rgba(red(@appBGsolid),green(@appBGsolid),blue(@appBGsolid),0.94);
+    //border-bottom: 1px solid darken(@appBGsolid,5%);
     font-weight: 600;
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -324,8 +324,8 @@
     }
     scrtitle {
       -webkit-flex: 1 1 auto;
-      text-align: right;
-      padding-right: (@touchBase / 3);
+      text-align: center;
+      padding: 0rem (@touchBase / 3);
       text-transform: uppercase;
       letter-spacing: 0.075em;
       white-space: nowrap;
@@ -923,15 +923,19 @@
   screen#calculate {
     color: lighten(@mainColor, 30%);
     mortgage-calculation {
+      max-width: (@maxKeySize * 4);
       summary {
-        font-size: 2.3rem;
+        font-size: 3vh;
         padding: 1rem 2rem;
-        principal, amortization, rate, frequency, calculated {
+        principal, down, amortization, rate, frequency, calculated {
           .animate();
           display: inline-block;
           position: relative;
-          font-size: 2.5rem;
+          font-size: 3.5vh;
           color: @tintAlt;
+          pct {
+            font-size: 2.2vh;
+          }
           &::after {
             .animate();
             position: absolute;
@@ -957,11 +961,11 @@
           color: @tint;
         }
       }
-      down-payment {
+      insurance {
         display: inline-block;
         width: 100%;
         padding: 1rem 2rem;
-        font-size: 1.5rem;
+        font-size: 2.5vh;
         .flexContainer();
         row {
           .flexItemElastic();
@@ -974,6 +978,9 @@
           text {
             .flexItem();
             .flexItemElastic();
+            insurance-summary {
+              display: block;
+            }
           }
         }
       }
@@ -1041,6 +1048,17 @@
           &.wide {
             width: 50vw;
             max-width: (@maxKeySize * 2);
+          }
+          &.small {
+            height: 12.5vw;
+            min-height: 3rem;
+            max-height: @maxKeySize;
+            font-size: 2vh;
+          }
+          &.confirm {
+            font-family: "AvenirNext-DemiBold";
+            color: @tint;
+            font-size: 2vh;
           }
         }
       }

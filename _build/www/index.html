@@ -43,90 +43,307 @@
           </div>
         </form>
       </screen>
-      <screen id="calculate" class="hidden flexContainer flexContainerSpaceBetween">
-        <helper class="hide flexItem flexContainer">
-          <text class="flexItem">
-            Tap on the red highlights to change.
-          </text>
-        </helper>
-        <mortgage-calculation class="flexItem">
-          <summary>
-            <principal class="touchable" style="touch-action: none;">$200,000</principal> for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>####</calculated>.
-          </summary>
-          <down-payment class="touchable" style="touch-action: none;">
-            <row>
-              <text><i class="icon-angle-right"></i></text>
-              <text>Add a down-payment to add an estimated insurance cost.</text>
-            </row>
-          </down-payment>
-        </mortgage-calculation>
-        <user-input class="flexItem flexContainer">
-          <numberpad class="hide flexItem">
-            <row>
-              <key data-value="7" class="touchable" style="touch-action: none;">
-                <face>7</face>
-              </key>
-              <key data-value="8" class="touchable" style="touch-action: none;">
-                <face>8</face>
-              </key>
-              <key data-value="9" class="touchable" style="touch-action: none;">
-                <face>9</face>
-              </key>
-              <key data-value="clear" class="touchable destroy" style="touch-action: none;">
-                <face>
-                  <img src="img/btn-clear.svg" alt="Clear Entry" width="27" height="27">
-                </face>
-              </key>
-            </row>
-            <row>
-              <key data-value="4" class="touchable" style="touch-action: none;">
-                <face>4</face>
-              </key>
-              <key data-value="5" class="touchable" style="touch-action: none;">
-                <face>5</face>
-              </key>
-              <key data-value="6" class="touchable" style="touch-action: none;">
-                <face>6</face>
-              </key>
-              <key data-value="delete" class="touchable destroy" style="touch-action: none;">
-                <face>
-                  <img src="img/btn-delete.svg" alt="Delete character" width="27" height="27">
-                </face>
-              </key>
-            </row>
-            <row>
-              <column>
-                <row>
-                  <key data-value="1" class="touchable" style="touch-action: none;">
-                    <face>1</face>
-                  </key>
-                  <key data-value="2" class="touchable" style="touch-action: none;">
-                    <face>2</face>
-                  </key>
-                  <key data-value="3" class="touchable" style="touch-action: none;">
-                    <face>3</face>
-                  </key>
-                </row>
-                <row class="flexItemElastic">
-                  <key data-value="0" class="touchable wide" style="touch-action: none;">
-                    <face>0</face>
-                  </key>
-                  <key data-value="decimal" class="touchable" style="touch-action: none;">
-                    <face>.</face>
-                  </key>
-                </row>
-              </column>
-              <key data-value="confirm" class="touchable tall" style="touch-action: none;">
-                <face>
-                  <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
-                </face>
-              </key>
-            </row>
-          </numberpad>
-          <frequency-selector class="hide flexItem">
-            stuff
-          </frequency-selector>
-        </user-input>
+      <screen id="calculate" class="hidden hasNav flexContainer flexContainerSpaceBetween">
+        <nav class="top">
+          <left>
+            <i id="btn_menu" class="touchable" style="touch-action: none;">
+              <img src="img/nav-menu.svg">
+            </i>
+          </left>
+          <scrtitle></scrtitle>
+          <right></right>
+        </nav>
+        <content class="flexContainer flexContainerSpaceBetween">
+          <helper class="hide flexItem flexContainer">
+            <text class="flexItem">
+              Tap on the red highlights to change.
+            </text>
+          </helper>
+          <mortgage-calculation class="flexItem">
+            <summary>
+              <principal class="touchable" style="touch-action: none;">$200,000</principal> home, less a <down class="touchable" style="touch-action: none;">$10,000 <pct>(5%)</pct></down> down-payment, for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>$1,147</calculated>.
+            </summary>
+            <insurance class="touchable" style="touch-action: none;">
+              <row>
+                <text style="min-width:2.3rem;">
+                  <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+                </text>
+                <text style="padding-left:1rem;">
+                  <insurance-summary>
+                    CMHC Mortgage Loan Insurance is about <insurance-amount>$6,840</insurance-amount> of this <financed-amount>$196,840</financed-amount> <transaction-type>purchase</transaction-type>.
+                  </insurance-summary>
+                </text>
+              </row>
+            </insurance>
+          </mortgage-calculation>
+          <user-input class="flexItem flexContainer">
+            <numberpad class="hide principal flexItem">
+              <row>
+                <key data-value="7" class="touchable" style="touch-action: none;">
+                  <face>7</face>
+                </key>
+                <key data-value="8" class="touchable" style="touch-action: none;">
+                  <face>8</face>
+                </key>
+                <key data-value="9" class="touchable" style="touch-action: none;">
+                  <face>9</face>
+                </key>
+                <key data-value="clear" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-clear.svg" alt="Clear Entry" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <key data-value="4" class="touchable" style="touch-action: none;">
+                  <face>4</face>
+                </key>
+                <key data-value="5" class="touchable" style="touch-action: none;">
+                  <face>5</face>
+                </key>
+                <key data-value="6" class="touchable" style="touch-action: none;">
+                  <face>6</face>
+                </key>
+                <key data-value="delete" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-delete.svg" alt="Delete character" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <column>
+                  <row>
+                    <key data-value="1" class="touchable" style="touch-action: none;">
+                      <face>1</face>
+                    </key>
+                    <key data-value="2" class="touchable" style="touch-action: none;">
+                      <face>2</face>
+                    </key>
+                    <key data-value="3" class="touchable" style="touch-action: none;">
+                      <face>3</face>
+                    </key>
+                  </row>
+                  <row class="flexItemElastic">
+                    <key data-value="0" class="touchable wide" style="touch-action: none;">
+                      <face>0</face>
+                    </key>
+                    <key data-value="decimal" class="disabled" style="touch-action: none;">
+                      <face>.</face>
+                    </key>
+                  </row>
+                </column>
+                <key data-value="confirm" class="touchable tall" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
+                  </face>
+                </key>
+              </row>
+            </numberpad>
+            <numberpad class="hide down flexItem">
+              <row>
+                <key data-value="0.05" class="touchable small confirm" style="touch-action: none;">
+                  5%
+                </key>
+                <key data-value="0.1" class="touchable small confirm" style="touch-action: none;">
+                  10%
+                </key>
+                <key data-value="0.15" class="touchable small confirm" style="touch-action: none;">
+                  15%
+                </key>
+                <key data-value="0.2" class="touchable small confirm" style="touch-action: none;">
+                  20%
+                </key>
+              </row>
+              <row>
+                <key data-value="7" class="touchable" style="touch-action: none;">
+                  <face>7</face>
+                </key>
+                <key data-value="8" class="touchable" style="touch-action: none;">
+                  <face>8</face>
+                </key>
+                <key data-value="9" class="touchable" style="touch-action: none;">
+                  <face>9</face>
+                </key>
+                <key data-value="clear" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-clear.svg" alt="Clear Entry" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <key data-value="4" class="touchable" style="touch-action: none;">
+                  <face>4</face>
+                </key>
+                <key data-value="5" class="touchable" style="touch-action: none;">
+                  <face>5</face>
+                </key>
+                <key data-value="6" class="touchable" style="touch-action: none;">
+                  <face>6</face>
+                </key>
+                <key data-value="delete" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-delete.svg" alt="Delete character" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <column>
+                  <row>
+                    <key data-value="1" class="touchable" style="touch-action: none;">
+                      <face>1</face>
+                    </key>
+                    <key data-value="2" class="touchable" style="touch-action: none;">
+                      <face>2</face>
+                    </key>
+                    <key data-value="3" class="touchable" style="touch-action: none;">
+                      <face>3</face>
+                    </key>
+                  </row>
+                  <row class="flexItemElastic">
+                    <key data-value="0" class="touchable wide" style="touch-action: none;">
+                      <face>0</face>
+                    </key>
+                    <key data-value="decimal" class="disabled" style="touch-action: none;">
+                      <face>.</face>
+                    </key>
+                  </row>
+                </column>
+                <key data-value="confirm" class="touchable tall confirm" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
+                  </face>
+                </key>
+              </row>
+            </numberpad>
+            <numberpad class="hide amortization flexItem">
+              <row>
+                <key data-value="7" class="touchable" style="touch-action: none;">
+                  <face>7</face>
+                </key>
+                <key data-value="8" class="touchable" style="touch-action: none;">
+                  <face>8</face>
+                </key>
+                <key data-value="9" class="touchable" style="touch-action: none;">
+                  <face>9</face>
+                </key>
+                <key data-value="300" class="touchable confirm" style="touch-action: none;">
+                  <face>
+                    25
+                  </face>
+                </key>
+              </row>
+              <row>
+                <key data-value="4" class="touchable" style="touch-action: none;">
+                  <face>4</face>
+                </key>
+                <key data-value="5" class="touchable" style="touch-action: none;">
+                  <face>5</face>
+                </key>
+                <key data-value="6" class="touchable" style="touch-action: none;">
+                  <face>6</face>
+                </key>
+                <key data-value="240" class="touchable confirm" style="touch-action: none;">
+                  <face>
+                    20
+                  </face>
+                </key>
+              </row>
+              <row>
+                <column>
+                  <row>
+                    <key data-value="1" class="touchable" style="touch-action: none;">
+                      <face>1</face>
+                    </key>
+                    <key data-value="2" class="touchable" style="touch-action: none;">
+                      <face>2</face>
+                    </key>
+                    <key data-value="3" class="touchable" style="touch-action: none;">
+                      <face>3</face>
+                    </key>
+                  </row>
+                  <row class="flexItemElastic">
+                    <key data-value="0" class="touchable wide" style="touch-action: none;">
+                      <face>0</face>
+                    </key>
+                    <key data-value="decimal" class="disabled" style="touch-action: none;">
+                      <face>.</face>
+                    </key>
+                  </row>
+                </column>
+                <key data-value="confirm" class="touchable tall confirm" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
+                  </face>
+                </key>
+              </row>
+            </numberpad>
+            <numberpad class="hide rate flexItem">
+              <row>
+                <key data-value="7" class="touchable" style="touch-action: none;">
+                  <face>7</face>
+                </key>
+                <key data-value="8" class="touchable" style="touch-action: none;">
+                  <face>8</face>
+                </key>
+                <key data-value="9" class="touchable" style="touch-action: none;">
+                  <face>9</face>
+                </key>
+                <key data-value="clear" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-clear.svg" alt="Clear Entry" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <key data-value="4" class="touchable" style="touch-action: none;">
+                  <face>4</face>
+                </key>
+                <key data-value="5" class="touchable" style="touch-action: none;">
+                  <face>5</face>
+                </key>
+                <key data-value="6" class="touchable" style="touch-action: none;">
+                  <face>6</face>
+                </key>
+                <key data-value="delete" class="touchable destroy" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-delete.svg" alt="Delete character" width="27" height="27">
+                  </face>
+                </key>
+              </row>
+              <row>
+                <column>
+                  <row>
+                    <key data-value="1" class="touchable" style="touch-action: none;">
+                      <face>1</face>
+                    </key>
+                    <key data-value="2" class="touchable" style="touch-action: none;">
+                      <face>2</face>
+                    </key>
+                    <key data-value="3" class="touchable" style="touch-action: none;">
+                      <face>3</face>
+                    </key>
+                  </row>
+                  <row class="flexItemElastic">
+                    <key data-value="0" class="touchable wide" style="touch-action: none;">
+                      <face>0</face>
+                    </key>
+                    <key data-value="decimal" class="touchable" style="touch-action: none;">
+                      <face>.</face>
+                    </key>
+                  </row>
+                </column>
+                <key data-value="confirm" class="touchable tall" style="touch-action: none;">
+                  <face>
+                    <img src="img/btn-confirm.svg" alt="Confirm Entry" width="31" height="27">
+                  </face>
+                </key>
+              </row>
+            </numberpad>
+            <frequency-selector class="hide flexItem">
+              stuff
+            </frequency-selector>
+          </user-input>
+        </content>
       </screen>
     </app>
     <script type="text/javascript" src="cordova.js"></script>

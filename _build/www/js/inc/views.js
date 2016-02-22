@@ -64,12 +64,32 @@ var screens = {
             $(this).toggleClass('selected');
             l.p($(this)[0].tagName.toLowerCase(),1);
             switch($(this)[0].tagName.toLowerCase()){
-              case('frequency'):
+              case 'principal':
+                $('screen#calculate user-input numberpad').addClass('hide');
+                $('screen#calculate user-input numberpad.principal').removeClass('hide');
+                $('screen#calculate user-input frequency-selector').addClass('hide');
+                break;
+              case 'down':
+                $('screen#calculate user-input numberpad').addClass('hide');
+                $('screen#calculate user-input numberpad.down').removeClass('hide');
+                $('screen#calculate user-input frequency-selector').addClass('hide');
+                break;
+              case 'amortization':
+                $('screen#calculate user-input numberpad').addClass('hide');
+                $('screen#calculate user-input numberpad.amortization').removeClass('hide');
+                $('screen#calculate user-input frequency-selector').addClass('hide');
+                break;
+              case 'rate':
+                $('screen#calculate user-input numberpad').addClass('hide');
+                $('screen#calculate user-input numberpad.rate').removeClass('hide');
+                $('screen#calculate user-input frequency-selector').addClass('hide');
+                break;
+              case 'frequency':
                 $('screen#calculate user-input numberpad').addClass('hide');
                 $('screen#calculate user-input frequency-selector').removeClass('hide');
                 break;
               default:
-                $('screen#calculate user-input numberpad').removeClass('hide');
+                $('screen#calculate user-input numberpad').addClass('hide');
                 $('screen#calculate user-input frequency-selector').addClass('hide');
             }
           }

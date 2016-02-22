@@ -24,6 +24,9 @@
         },
         "cordova-plugin-globalization": {
             "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.n2d.SimpleCanadianMortgage"
         }
     },
     "dependent_plugins": {}

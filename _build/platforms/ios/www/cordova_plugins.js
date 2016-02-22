@@ -96,6 +96,14 @@ module.exports = [
         "clobbers": [
             "navigator.globalization"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -106,7 +114,8 @@ module.exports.metadata =
     "cordova-plugin-dialogs": "1.2.0",
     "cordova-plugin-geolocation": "2.1.0",
     "cordova-plugin-network-information": "1.2.0",
-    "cordova-plugin-globalization": "1.0.2"
+    "cordova-plugin-globalization": "1.0.2",
+    "cordova-plugin-x-socialsharing": "5.0.10"
 }
 // BOTTOM OF METADATA
 });
