@@ -104,6 +104,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/com.telerik.plugins.wkwebview/www/wkwebview.js",
+        "id": "com.telerik.plugins.wkwebview.wkwebview",
+        "pluginId": "com.telerik.plugins.wkwebview",
+        "clobbers": [
+            "wkwebview"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -115,7 +123,9 @@ module.exports.metadata =
     "cordova-plugin-geolocation": "2.1.0",
     "cordova-plugin-network-information": "1.2.0",
     "cordova-plugin-globalization": "1.0.2",
-    "cordova-plugin-x-socialsharing": "5.0.10"
+    "cordova-plugin-x-socialsharing": "5.0.10",
+    "cordova-plugin-webserver": "1.0.3",
+    "com.telerik.plugins.wkwebview": "0.6.9"
 }
 // BOTTOM OF METADATA
 });
