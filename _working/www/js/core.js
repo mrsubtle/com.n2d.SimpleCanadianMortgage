@@ -28,6 +28,9 @@ function require(script) {
 // touchable item event dispatcher
   require('inc/touch.js');
 
+// touchable item event dispatcher
+  require('inc/menu.js');
+
 // views constructor
   require('inc/views.js');
 
@@ -126,7 +129,7 @@ var cmhc = {
       rate : 0.006
     }
   ],
-  portability : [
+  port : [
     { //Non-Traditional Down Payment not available for porting
       ltvMin : 1,
       ltvMax : 1,
@@ -244,7 +247,7 @@ var app = {
     console.log('Device ready, yo');
     if (meta.isOnline) Parse.initialize(config.parse.ApplicationID, config.parse.JavascriptKey);
     app.setLocale();
-    $('screen#calculate helper').removeClass('hide');
+    //$('screen#calculate helper').removeClass('hide');
     views.initialize();
     touch.initialize();
   },

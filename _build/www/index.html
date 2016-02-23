@@ -10,39 +10,42 @@
     <title>SimpleCalc</title>
   </head>
   <body>
+
+    <menu class="menu-left">
+      <group>
+        <img src="img/menu-logo.svg" id="brand">
+      </group>
+      <group>
+        <i id="btn_menu_mortgageType" class="flexContainer flexContainerRow iconText touchable">
+          <img src="img/menu-mortgage-type.svg" class="flexItem">
+          <label class="flexItem flexItemElastic">
+            Mortgage Type: <value>Purchase</value>
+          </label>
+        </i>
+        <i id="btn_menu_explore" class="flexContainer flexContainerRow iconText touchable">
+          <img src="img/menu-explore.svg" class="flexItem">
+          <label class="flexItem flexItemElastic">
+            Find a professional
+          </label>
+        </i>
+      </group>
+      <group>
+        <i id="btn_menu_settings" class="flexContainer flexContainerRow iconText touchable">
+          <img src="img/menu-settings.svg" class="flexItem">
+          <label class="flexItem flexItemElastic">
+            Settings
+          </label>
+        </i>
+        <i id="btn_menu_logout" class="flexContainer flexContainerRow iconText touchable">
+          <img src="img/menu-logout.svg" class="flexItem">
+          <label class="flexItem flexItemElastic">
+            Sign out
+          </label>
+        </i>
+      </group>
+    </menu>
+
     <app>
-      <screen id="login" class="hidden">
-        <form id="login">
-          <div>
-            <input type="email" id="t_email" placeholder="you@server.net">
-          </div>
-          <div>
-            <input type="password" id="t_password" placeholder="password">
-          </div>
-          <div>
-            <button type="submit">Login</button>
-          </div>
-        </form>
-      </screen>
-      <screen id="signup" class="hidden">
-        <form id="signup">
-          <div>
-            <input type="text" id="t_name" placeholder="Richard B.">
-          </div>
-          <div>
-            <input type="email" id="t_email" placeholder="rich@blackagency.co">
-          </div>
-          <div>
-            <input type="text" id="t_password" placeholder="password">
-          </div>
-          <div>
-            <input type="text" id="t_password_confirm" placeholder="confirm password">
-          </div>
-          <div>
-            <button type="submit">Signup</button>
-          </div>
-        </form>
-      </screen>
       <screen id="calculate" class="hidden hasNav flexContainer flexContainerSpaceBetween">
         <nav class="top">
           <left>
@@ -54,27 +57,36 @@
           <right></right>
         </nav>
         <content class="flexContainer flexContainerSpaceBetween">
-          <helper class="hide flexItem flexContainer">
-            <text class="flexItem">
-              Tap on the red highlights to change.
+          <helper class="flexItem">
+            <text>
+              Tap the red highlighted text to edit.
             </text>
           </helper>
           <mortgage-calculation class="flexItem">
-            <summary>
-              <principal class="touchable" style="touch-action: none;">$200,000</principal> home, less a <down class="touchable" style="touch-action: none;">$10,000 <pct>(5%)</pct></down> down-payment, for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>$1,147</calculated>.
-            </summary>
-            <insurance class="touchable" style="touch-action: none;">
-              <row>
-                <text style="min-width:2.3rem;">
-                  <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
-                </text>
-                <text style="padding-left:1rem;">
-                  <insurance-summary>
-                    CMHC Mortgage Loan Insurance is about <insurance-amount>$6,840</insurance-amount> of this <financed-amount>$196,840</financed-amount> <transaction-type>purchase</transaction-type>.
-                  </insurance-summary>
-                </text>
-              </row>
-            </insurance>
+            <mortgage-type class="purchase">
+              <summary>
+                <principal class="touchable" style="touch-action: none;">$200,000</principal> home, less <down class="touchable" style="touch-action: none;">$10,000 <pct>5%</pct></down> down, for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>$1,147</calculated>.
+              </summary>
+              <insurance class="touchable" style="touch-action: none;">
+                <!-- #tpl_insurance_purchase -->
+              </insurance>
+            </mortgage-type>
+            <mortgage-type class="refinance hidden">
+              <summary>
+                <principal class="touchable" style="touch-action: none;">$200,000</principal> home value, with <down class="touchable" style="touch-action: none;">$190,000 <ltv>95%</ltv></down> to finance, for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>$1,147</calculated>.
+              </summary>
+              <insurance class="touchable" style="touch-action: none;">
+                <!-- #tpl_insurance_refinance -->
+              </insurance>
+            </mortgage-type>
+            <mortgage-type class="port hidden">
+              <summary>
+                <principal class="touchable" style="touch-action: none;">$200,000</principal> home value, with <down class="touchable" style="touch-action: none;">$190,000 <ltv>95%</ltv></down> to finance, for <amortization class="touchable" style="touch-action: none;">25 years</amortization> at <rate class="touchable" style="touch-action: none;">4.967%</rate>, <frequency class="touchable" style="touch-action: none;">monthly</frequency> is <calculated>$1,147</calculated>.
+              </summary>
+              <insurance class="touchable" style="touch-action: none;">
+                <!-- #tpl_insurance_port -->
+              </insurance>
+            </mortgage-type>
           </mortgage-calculation>
           <user-input class="flexItem flexContainer">
             <numberpad class="hide principal flexItem">
@@ -346,6 +358,86 @@
         </content>
       </screen>
     </app>
+
+    <overlay></overlay>
+
+    <!-- Underscore.js HTML templates -->
+    <script id="tpl_insurance_purchase" type="text/template">
+      <% if(TD.ltv <= cmhc.purchase[1].ltvMax ) { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            CMHC Mortgage Loan Insurance is about <insurance-amount>$<%=utility.formatNumber(TD.insuranceAmount) %></insurance-amount> of this <financed-amount>$<%=utility.formatNumber(TD.financedAmount) %></financed-amount> <transaction-type>purchase</transaction-type>.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } else { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            Your down-payment is too low to qualify for CMHC Mortgage Loan Insurance.  Therefore, your financial institution will likely require a higher down-payment.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } %>
+    </script>
+    <script id="tpl_insurance_refinance" type="text/template">
+      <% if(TD.ltv <= cmhc.refinance[4].ltvMax ) { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            CMHC Mortgage Loan Insurance is about <insurance-amount>$<%=utility.formatNumber(TD.insuranceAmount) %></insurance-amount> of this <financed-amount>$<%=utility.formatNumber(TD.financedAmount) %></financed-amount> <transaction-type>refinance</transaction-type>.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } else { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            Your Loan-to-Value ratio, <%=(TD.ltv * 100) %>%, is too low to qualify for CMHC Mortgage Loan Insurance. Must be at least <%=(cmhc.refinance[4].ltvMax * 100) %>%.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } %>
+    </script>
+    <script id="tpl_insurance_port" type="text/template">
+      <% if(TD.ltv <= cmhc.port[4].ltvMax ) { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            CMHC Mortgage Loan Insurance is about <insurance-amount>$<%=utility.formatNumber(TD.insuranceAmount) %></insurance-amount> of this <financed-amount>$<%=utility.formatNumber(TD.financedAmount) %></financed-amount> <transaction-type>port</transaction-type>.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } else { %>
+      <row>
+        <text style="min-width:2.3rem;">
+          <img src="img/icon-cmhc-chevron.svg" width="23" height="10">
+        </text>
+        <text style="padding-left:1rem;">
+          <insurance-summary>
+            Your Loan-to-Value ratio, <%=(TD.ltv * 100) %>%, is too low to qualify for CMHC Mortgage Loan Insurance. Must be at least <%=(cmhc.port[4].ltvMax * 100) %>%.
+          </insurance-summary>
+        </text>
+      </row>
+      <% } %>
+    </script>
+
     <script type="text/javascript" src="cordova.js"></script>
     <script src="js/lib/underscore-min.js"></script>
     <script src="js/lib/backbone-min.js"></script>

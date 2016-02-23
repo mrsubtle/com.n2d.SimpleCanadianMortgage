@@ -14,8 +14,6 @@ var views = {
 };
 
 var screens = {
-  login : {},
-  signup : {},
   calculate : {
     show : function(){
       'use strict';
@@ -41,6 +39,7 @@ var screens = {
       'use strict';
       return $.Deferred(function(f){
         'use strict';
+        $('screen#calculate #btn_menu').hammer().off('tap');
         $('screen#calculate .touchable').hammer().off('tap');
         f.resolve();
       }).promise();
@@ -49,6 +48,10 @@ var screens = {
       'use strict';
       return $.Deferred(function(f){
         'use strict';
+        $('screen#calculate #btn_menu').hammer().on('tap',function(){
+          $('screen #btn_menu').addClass('spinFaceUp');
+          setTimeout(menu.show,300);
+        });
         $('screen#calculate mortgage-calculation summary .touchable').hammer().on('tap', function(){
           'use strict';
           var currentSelection = $('screen#calculate mortgage-calculation .touchable.selected').length == 0 ? '' : $('screen#calculate mortgage-calculation .touchable.selected')[0].tagName;
@@ -132,4 +135,65 @@ var screens = {
       }).promise();
     }
   },
-}
+};
+
+var modals = {
+  login : {
+    show : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    hide : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    remE : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    addE : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        f.resolve();
+      }).promise();
+    }
+  },
+  template : {
+    show : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    hide : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    remE : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        'use strict';
+        f.resolve();
+      }).promise();
+    },
+    addE : function(){
+      'use strict';
+      return $.Deferred(function(f){
+        f.resolve();
+      }).promise();
+    }
+  },
+};

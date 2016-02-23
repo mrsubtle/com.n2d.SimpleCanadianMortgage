@@ -87,6 +87,14 @@
     -webkit-align-self: auto !important;
     align-self: auto !important;
   }
+  .abs-top {
+    position: absolute;
+    top: 0px;
+  }
+  .abs-bottom {
+    position: absolute;
+    bottom: 0px;
+  }
   .hidden {
     display: none !important;
   }
@@ -114,7 +122,7 @@
   }
   .tiltBack {
     -webkit-transform: perspective(290vh) rotateX(9deg) rotateY(-65deg) rotateZ(8deg);
-    -webkit-filter: brightness(0.45);
+    -webkit-filter: brightness(0.95);
   }
   .viewportBottom {
     -webkit-transform: translateY( 100% );
@@ -446,8 +454,9 @@
     width: 90%; height: 100%;
     max-width: 350px;
     margin: 0; padding: 2rem;
-    background: -webkit-linear-gradient(left, #262626 0, rgba(38,38,38,0.8) 47%, rgba(38,38,38,0) 100%);
-    color: @appBGsolid;
+    //background: -webkit-linear-gradient(left, #262626 0, rgba(38,38,38,0.8) 47%, rgba(38,38,38,0) 100%);
+    background: -webkit-linear-gradient(left, #e1e1e1 0, rgba(253,  253, 253, 0.8) 47%, rgba(253, 253, 253, 0) 100%);
+    color: @mainColor;
     //flexbox definition
     display: -webkit-flex;
     -webkit-box-direction: normal;
@@ -473,11 +482,10 @@
     i.iconText {
       img {
         max-height: @touchBase;
-        height: 8vh;
+        height: 7vh;
       }
       label {
-        color: @modalBG !important;
-        font-size: 2.5vh;
+        font-size: 1.9vh;
       }
     }
   }
@@ -731,6 +739,34 @@
     -webkit-transform:  translate(-100%,-100%);
   }
 
+  pill-group {
+    .flexContainer();
+    .flexContainerRow();
+    width: 100%;
+    pill {
+      display: inline-block;
+      .flexItem();
+      padding: 1.2vh 2.2vh;
+      margin-right: 1.5rem;
+      background-color: #efefef;
+      border-radius: 0.4vh;
+      .flexContainer();
+      text {
+        .flexItem();
+        font-family: 'AvenirNext-DemiBold';
+        font-size: 1.4vh;
+        text-transform: uppercase;
+        color: @tint;
+      }
+    }
+    pill.active {
+      background-color: @tint;
+      text {
+        color: @appBGsolid;
+      }
+    }
+  }
+
 // FORM ELEMENTS
 
   form {
@@ -934,7 +970,9 @@
           font-size: 3.5vh;
           color: @tintAlt;
           pct {
-            font-size: 2.2vh;
+            font-size: 1.9vh;
+            font-family: 'AvenirNext-DemiBold';
+            vertical-align: top;
           }
           &::after {
             .animate();
