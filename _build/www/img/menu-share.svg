@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="50px" height="50px" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5.2 (25235) - http://www.bohemiancoding.com/sketch -->
+    <title>menu-share</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="menu-share" sketch:type="MSArtboardGroup">
+            <rect id="bg" fill-opacity="0" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="0" width="50" height="50"></rect>
+            <path d="M35.0040001,22.91825 L26.6690001,15 L26.6690001,19.4453681 C18.889632,20.5566841 16.111316,26.1133681 15,31.6700001 C17.778316,27.7803681 21.112316,26.0020959 26.6690001,26.0020959 L26.6690001,30.5586841 L35.0040001,22.91825 L35.0040001,22.91825 Z" id="Shape" fill-opacity="0.87" fill="#373737" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

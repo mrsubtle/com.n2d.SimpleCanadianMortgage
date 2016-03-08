@@ -41,6 +41,7 @@ var meta = {
     principal : 200000,       //in dollars, formatted via utility.formatNumber
     amortization : 300,       //in months, 300 = 25 years, formatted via utility.formatMonthsToYears and utility.formatYearsToMonths
     rate : 0.01111,           //simplified percentage to 3 decimals, formatted via utility.formatPercent
+    rateType : 0,             //0 = semi-annual not compounded in advance (CDN), 1 = compounded (USA)
     frequency : 26,           //number of payment in a year; 1 = annually, 2 = semi-annually, 4 = quarterly, 12 = monthly, 24 = semi-monthly, 26 = bi-weekly, 52 = weekly
     downPercent : 0.05,       //simplified percentage to 3 decimals, formatted via utility.formatPercent
     downAmount : 10000,       //in dollars, formatted via utility.formatNumber
@@ -48,9 +49,9 @@ var meta = {
     insurableAmount : 190000, //(principal - downAmount)
     insuranceTeir : 1,        //defined in cmhc Array
     insurancePercent : 0.036, //simplified percentage to 3 decimals, formatted via utility.formatPercent
-    insuranceAmount : 6840,      //(insurableAmount * insurancePercent), in dollars, formatted via utility.formatNumber
+    insuranceAmount : 6840,   //(insurableAmount * insurancePercent), in dollars, formatted via utility.formatNumber
     transactionType : 0,      //0 = purchase, 1 = refinance, 2 = port
-    financedAmount : 196840,       //(insurableAmount + insuranceAmount)
+    financedAmount : 196840,  //(insurableAmount + insuranceAmount)
   }
 };
 
